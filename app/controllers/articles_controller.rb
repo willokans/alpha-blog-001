@@ -11,6 +11,9 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
+    debugger
+    #hard coding the user until we set up the user login
+    @article.user = User.first
     
     if @article.save
       flash[:success] = "Article was successfully created"
